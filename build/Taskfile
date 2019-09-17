@@ -12,8 +12,8 @@ task:install() {
     cd .. && chmod 775 ./bootstrap.sh && ./bootstrap.sh
     virtualenv:install
     docker:install
-    task:setup
-    docker:command:npm install
+    #task:setup
+    #docker:command:npm install
 }
 
 task:install:theme() {
@@ -154,4 +154,8 @@ task:db:download() {
         b5:abort "Argument missing: server name"
     fi
     virtualenv:run fab "$1" download:"${2:-}"
+}
+
+task:ctl() {
+    virtualenv:run fab "$1" ctl:"${2:-}"
 }
