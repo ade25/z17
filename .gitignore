@@ -4,7 +4,7 @@
 *.EGG
 *.EGG-INFO
 bin
-build
+!build
 develop-eggs
 coverage
 downloads
